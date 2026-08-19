@@ -1,0 +1,13 @@
+.env
+data/vector_store/
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+dist/
+.DS_Store
+*.egg-info/
+.deepeval/
+.streamlit/
+venv/
+.venv/

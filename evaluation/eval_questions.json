@@ -1,0 +1,202 @@
+[
+  {
+    "id": "q01",
+    "question": "What's the monthly service fee on my checking account?",
+    "query_type": "keyword",
+    "ground_truth_source": "WellsFargo_Consumer_Account_Fees_Info.pdf",
+    "ground_truth_page": 4,
+    "ideal_answer": "Everyday Checking has a $15 monthly service fee and Clear Access Banking has a $5 monthly service fee, each of which can be avoided by meeting one of several listed requirements."
+  },
+  {
+    "id": "q02",
+    "question": "What happens if I overdraw my account?",
+    "query_type": "semantic",
+    "ground_truth_source": "WellsFargo_Consumer_Account_Fees_Info.pdf",
+    "ground_truth_page": 10,
+    "ideal_answer": "Wells Fargo may charge a $35 overdraft fee per item paid into overdraft, limited to three per business day, with no fee charged on items of $10 or less."
+  },
+  {
+    "id": "q03",
+    "question": "Can Wells Fargo close my account without notice?",
+    "query_type": "semantic",
+    "ground_truth_source": "WellsFargo_Deposit_Account_Agreement.pdf",
+    "ground_truth_page": 33,
+    "ideal_answer": "Yes, Wells Fargo may close a consumer deposit account at any time; if the balance is zero it can be closed without prior notification."
+  },
+  {
+    "id": "q04",
+    "question": "How do I dispute a transaction on my checking account?",
+    "query_type": "semantic",
+    "ground_truth_source": "WellsFargo_Deposit_Account_Agreement.pdf",
+    "ground_truth_page": 26,
+    "ideal_answer": "For electronic fund transfer errors, you contact Wells Fargo as described in the 'In case of errors or questions about your electronic fund transfers' section of the Electronic Fund Transfer Services provisions."
+  },
+  {
+    "id": "q05",
+    "question": "What's the APR on my Wells Fargo credit card?",
+    "query_type": "keyword",
+    "ground_truth_source": "WellsFargo_Credit_Card_Agreement.pdf",
+    "ground_truth_page": 1,
+    "ideal_answer": "The Annual Percentage Rate (APR) for purchases is 28.99%."
+  },
+  {
+    "id": "q06",
+    "question": "What fees apply to wire transfers?",
+    "query_type": "keyword",
+    "ground_truth_source": "WellsFargo_Consumer_Account_Fees_Info.pdf",
+    "ground_truth_page": 12,
+    "ideal_answer": "Incoming wires are free; outgoing domestic digital wires are $30 each, branch wires are $40 each, standing transfer orders are $25 each, and drawdowns are $15 each, with international wires varying by currency."
+  },
+  {
+    "id": "q07",
+    "question": "What's Wells Fargo's reported revenue in their latest 10-K?",
+    "query_type": "keyword",
+    "ground_truth_source": "WellsFargo_Financial_Data_XBRL.xml",
+    "ground_truth_page": "us-gaap:RevenuesNetOfInterestExpense",
+    "ideal_answer": "Wells Fargo reported Revenues, Net of Interest Expense of $83,699,000,000 for the period 2025-01-01 to 2025-12-31."
+  },
+  {
+    "id": "q08",
+    "question": "Is there a fee to stop payment on a lost or stolen cashier's check?",
+    "query_type": "keyword",
+    "ground_truth_source": "WellsFargo_Consumer_Account_Fees_Info.pdf",
+    "ground_truth_page": 11,
+    "ideal_answer": "No, there is no fee for a stop payment on a lost, stolen, or destroyed cashier's check, though a waiting period and indemnity agreement may apply."
+  },
+  {
+    "id": "q09",
+    "question": "How much can I be reimbursed for non-Wells Fargo ATM fees with a Prime Checking account?",
+    "query_type": "semantic",
+    "ground_truth_source": "WellsFargo_Consumer_Account_Fees_Info.pdf",
+    "ground_truth_page": 7,
+    "ideal_answer": "Prime Checking reimburses non-Wells Fargo ATM fees for 1 U.S. and 1 international withdrawal per fee period, at a $4 reimbursement per cash withdrawal when the fee amount isn't provided to Wells Fargo."
+  },
+  {
+    "id": "q10",
+    "question": "What's the minimum opening deposit for a Way2Save Savings account?",
+    "query_type": "keyword",
+    "ground_truth_source": "WellsFargo_Consumer_Account_Fees_Info.pdf",
+    "ground_truth_page": 8,
+    "ideal_answer": "The minimum opening deposit for a Way2Save Savings account is $25."
+  },
+  {
+    "id": "q11",
+    "question": "How long is the initial monthly service fee waiver period for a new checking account?",
+    "query_type": "semantic",
+    "ground_truth_source": "WellsFargo_Consumer_Account_Fees_Info.pdf",
+    "ground_truth_page": 3,
+    "ideal_answer": "The monthly service fee is waived for each fee period ending within the first 64 days of opening (188 days for Premier Checking)."
+  },
+  {
+    "id": "q12",
+    "question": "How long do I have to report an unauthorized transaction on my account?",
+    "query_type": "semantic",
+    "ground_truth_source": "WellsFargo_Deposit_Account_Agreement.pdf",
+    "ground_truth_page": 31,
+    "ideal_answer": "You generally must notify Wells Fargo within 60 days after the account statement showing the unauthorized transaction was sent or made available."
+  },
+  {
+    "id": "q13",
+    "question": "What happens to my electronic banking privileges after I close my account?",
+    "query_type": "semantic",
+    "ground_truth_source": "WellsFargo_Deposit_Account_Agreement.pdf",
+    "ground_truth_page": 33,
+    "ideal_answer": "All electronic banking privileges are terminated when the account closes, though you can view account activity, download statements and tax documents, and perform limited maintenance for at least 90 days after closure."
+  },
+  {
+    "id": "q14",
+    "question": "Will Wells Fargo continue charging fees on a zero-balance account until I close it?",
+    "query_type": "semantic",
+    "ground_truth_source": "WellsFargo_Deposit_Account_Agreement.pdf",
+    "ground_truth_page": 33,
+    "ideal_answer": "Yes, accounts with a zero balance continue to be charged applicable fees, like the monthly service fee, until the account is closed."
+  },
+  {
+    "id": "q15",
+    "question": "What is Wells Fargo's Zero Liability protection for unauthorized card transactions?",
+    "query_type": "keyword",
+    "ground_truth_source": "WellsFargo_Deposit_Account_Agreement.pdf",
+    "ground_truth_page": 21,
+    "ideal_answer": "Zero Liability protection gives consumer cardholders more liability protection than Regulation E requires, though it doesn't apply if Wells Fargo determines fraud or negligence, or if the transaction isn't an unauthorized EFT under Regulation E."
+  },
+  {
+    "id": "q16",
+    "question": "How does Wells Fargo determine my available balance for overdraft purposes?",
+    "query_type": "semantic",
+    "ground_truth_source": "WellsFargo_Deposit_Account_Agreement.pdf",
+    "ground_truth_page": 13,
+    "ideal_answer": "Wells Fargo calculates the available balance in your account and sorts transactions into categories, as described in the Available Balance, Posting Transactions, and Overdraft section."
+  },
+  {
+    "id": "q17",
+    "question": "Is there an annual fee for my Wells Fargo credit card?",
+    "query_type": "keyword",
+    "ground_truth_source": "WellsFargo_Credit_Card_Agreement.pdf",
+    "ground_truth_page": 1,
+    "ideal_answer": "No, there is no annual fee on this credit card account."
+  },
+  {
+    "id": "q18",
+    "question": "How much is the late payment fee on my credit card?",
+    "query_type": "keyword",
+    "ground_truth_source": "WellsFargo_Credit_Card_Agreement.pdf",
+    "ground_truth_page": 1,
+    "ideal_answer": "The late payment penalty fee is up to $40.00 (the lesser of the Minimum Payment Due or $40.00, or $29.00 for a first-time event)."
+  },
+  {
+    "id": "q19",
+    "question": "Can Wells Fargo close my credit card account?",
+    "query_type": "semantic",
+    "ground_truth_source": "WellsFargo_Credit_Card_Agreement.pdf",
+    "ground_truth_page": 3,
+    "ideal_answer": "Yes, Wells Fargo may close the credit card account at any time and for any reason, though the cardholder must still repay any balance owed."
+  },
+  {
+    "id": "q20",
+    "question": "What should I do if I find a mistake on my credit card statement?",
+    "query_type": "semantic",
+    "ground_truth_source": "WellsFargo_Credit_Card_Agreement.pdf",
+    "ground_truth_page": 4,
+    "ideal_answer": "Write to Wells Fargo at the billing rights address with your account information, the dollar amount of the suspected error, and a description of the problem, within 60 days of the error appearing on your statement."
+  },
+  {
+    "id": "q21",
+    "question": "How is interest calculated on my credit card balance?",
+    "query_type": "semantic",
+    "ground_truth_source": "WellsFargo_Credit_Card_Agreement.pdf",
+    "ground_truth_page": 2,
+    "ideal_answer": "Interest is calculated using the average daily balance method (including new purchases): daily periodic rate x average daily balance x number of days in the billing cycle."
+  },
+  {
+    "id": "q22",
+    "question": "What was Wells Fargo's net income for the most recent fiscal year?",
+    "query_type": "keyword",
+    "ground_truth_source": "WellsFargo_Financial_Data_XBRL.xml",
+    "ground_truth_page": "us-gaap:NetIncomeLoss",
+    "ideal_answer": "Wells Fargo's Net Income (Loss) Attributable to Parent was $21,338,000,000 for the period 2025-01-01 to 2025-12-31."
+  },
+  {
+    "id": "q23",
+    "question": "What are Wells Fargo's total assets according to their financial filings?",
+    "query_type": "keyword",
+    "ground_truth_source": "WellsFargo_Financial_Data_XBRL.xml",
+    "ground_truth_page": "us-gaap:Assets",
+    "ideal_answer": "Wells Fargo reported total Assets of $2,148,631,000,000 as of 2025-12-31."
+  },
+  {
+    "id": "q24",
+    "question": "What's Chase's overdraft fee?",
+    "query_type": "out_of_scope",
+    "ground_truth_source": null,
+    "ground_truth_page": null,
+    "ideal_answer": "This assistant can only answer questions about Wells Fargo's own documents and cannot answer questions about other banks."
+  },
+  {
+    "id": "q25",
+    "question": "What's my current account balance?",
+    "query_type": "account_data",
+    "ground_truth_source": null,
+    "ground_truth_page": null,
+    "ideal_answer": "This assistant can only answer general policy questions and cannot access personal account data."
+  }
+]

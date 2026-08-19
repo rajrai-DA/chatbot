@@ -1,0 +1,42 @@
+# Wells Fargo RAG chatbot backend — seeded from ../../notebooks/requirements.txt and
+# ../../notebooks/production_rag_chatbot_memory/requirements.txt, trimmed to what the
+# production app + evaluation harness actually import.
+numpy<2
+
+# ── API ──
+fastapi
+uvicorn[standard]
+pydantic-settings
+python-dotenv
+
+# ── LLM / embeddings ──
+openai
+langchain
+langchain-core
+langchain-openai
+langchain-community
+langchain-text-splitters
+langchain-experimental
+tiktoken
+
+# ── Document parsing (Stage 1 ablation needs all three swappable) ──
+pypdf
+pdfplumber
+pymupdf
+pymupdf4llm
+langchain-pymupdf4llm
+
+# ── Embeddings / retrieval ──
+sentence-transformers
+chromadb
+faiss-cpu
+bm25s
+PyStemmer
+
+# ── Evaluation ──
+scikit-learn
+ragas
+deepeval
+
+# ── Tests ──
+pytest
