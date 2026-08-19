@@ -36,10 +36,8 @@ git clone https://github.com/rajrai-DA/chatbot.git
 cd chatbot
 ```
 
-Then follow **Backend setup** and **Frontend setup** below. You'll also need the source
-corpus at `../source_data/` (sibling to this `Chatbot/` folder — see the WellsFargo
-`*.pdf`/`*.xml` files referenced in **Vector database** below); it isn't in the repo, so get
-it from a teammate or the shared drive before your first ingest.
+Then follow **Backend setup** and **Frontend setup** below. The source corpus (the WellsFargo
+`*.pdf`/`*.xml` files) ships in the repo at `source_data/`, so no separate download is needed.
 
 ## Backend setup
 
@@ -63,7 +61,7 @@ Run the API:
 uvicorn app.main:app --reload --port 8000
 ```
 
-The first `/chat` request triggers a one-time ingest of `../../source_data/*.pdf` and the
+The first `/chat` request triggers a one-time ingest of `../source_data/*.pdf` and the
 XBRL financial data into the Chroma vector store at `../data/vector_store/` (persisted —
 subsequent starts reuse it). `GET /health` returns `{"status": "ok"}` without triggering ingest.
 
@@ -76,8 +74,8 @@ embedding model in `backend/app/config.py` (`chunk_strategy`, `chunk_size`, `chu
 `embedding_provider`, `embedding_model`), so different ablation configs get separate
 collections and never clobber each other in the same DB folder.
 
-**First-time creation** — automatic. With `../source_data/` in place (see above), just start
-the backend and send any `/chat` request (or call `get_chatbot()`):
+**First-time creation** — automatic, no separate download needed since `source_data/` ships in
+the repo. Just start the backend and send any `/chat` request (or call `get_chatbot()`):
 
 ```bash
 cd backend

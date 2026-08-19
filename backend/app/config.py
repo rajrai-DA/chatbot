@@ -14,7 +14,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 BACKEND_DIR = Path(__file__).resolve().parent.parent
 CHATBOT_DIR = BACKEND_DIR.parent
-SOURCE_DATA_DIR = CHATBOT_DIR.parent / "source_data"
+SOURCE_DATA_DIR = CHATBOT_DIR / "source_data"
 
 
 class Settings(BaseSettings):
