@@ -25,6 +25,22 @@ frontend/ (React + Vite)  --POST /chat-->  backend/ (FastAPI)
 - Node.js 18+
 - An OpenAI API key (embeddings + generation)
 
+## Getting started (new contributors)
+
+This repo excludes anything generated or environment-specific — `backend/venv/`,
+`frontend/node_modules/`, `data/vector_store/` (the Chroma DB), and `.env` (secrets) are all
+git-ignored. After cloning, you need to (re)create these locally:
+
+```bash
+git clone https://github.com/rajrai-DA/chatbot.git
+cd chatbot
+```
+
+Then follow **Backend setup** and **Frontend setup** below. You'll also need the source
+corpus at `../source_data/` (sibling to this `Chatbot/` folder — see the WellsFargo
+`*.pdf`/`*.xml` files referenced in **Vector database** below); it isn't in the repo, so get
+it from a teammate or the shared drive before your first ingest.
+
 ## Backend setup
 
 ```bash
@@ -50,6 +66,50 @@ uvicorn app.main:app --reload --port 8000
 The first `/chat` request triggers a one-time ingest of `../../source_data/*.pdf` and the
 XBRL financial data into the Chroma vector store at `../data/vector_store/` (persisted —
 subsequent starts reuse it). `GET /health` returns `{"status": "ok"}` without triggering ingest.
+
+### Vector database: creating and reloading
+
+The Chroma DB lives at `data/vector_store/` (git-ignored — every developer builds their own
+locally) and is not a single collection: `backend/app/retrieval/vector_store.py`'s
+`collection_name_for()` derives the collection name from the active chunking config and
+embedding model in `backend/app/config.py` (`chunk_strategy`, `chunk_size`, `chunk_overlap`,
+`embedding_provider`, `embedding_model`), so different ablation configs get separate
+collections and never clobber each other in the same DB folder.
+
+**First-time creation** — automatic. With `../source_data/` in place (see above), just start
+the backend and send any `/chat` request (or call `get_chatbot()`):
+
+```bash
+cd backend
+source venv/bin/activate
+uvicorn app.main:app --reload --port 8000
+# in another terminal: curl -X POST localhost:8000/chat -H "Content-Type: application/json" \
+#   -d '{"session_id": "init", "message": "hello"}'
+```
+
+This parses the PDFs/XBRL, chunks them, embeds each chunk, and populates the collection for
+the current config. `VectorStore.build()` skips re-embedding on subsequent startups as long
+as the existing collection's chunk count matches — so restarts are fast and don't re-call the
+embedding API.
+
+**Reloading / forcing a full rebuild** — needed after changing the source documents, or after
+changing `chunk_strategy`/`chunk_size`/`chunk_overlap`/`embedding_model` when you want the
+existing collection re-embedded rather than a new one created alongside it:
+
+```bash
+cd backend
+source venv/bin/activate
+python -c "from app.generation.chatbot import ProductionRAGChatbot; \
+print(ProductionRAGChatbot().ingest(force=True))"
+```
+
+Or, to wipe everything and start clean (e.g. the DB got corrupted, or you want to reclaim
+disk space from stale ablation collections):
+
+```bash
+rm -rf data/vector_store/
+# next /chat request (or the command above) rebuilds it from source_data/
+```
 
 Run the backend tests:
 
