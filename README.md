@@ -1,6 +1,6 @@
-# Wells Fargo RAG Chatbot
+# ABC Bank RAG Chatbot
 
-A citation-grounded RAG chatbot answering customer questions about Wells Fargo's deposit
+A citation-grounded RAG chatbot answering customer questions about ABC Bank deposit
 account terms, fees, and credit card agreement — plus the full evaluation harness used to
 justify every pipeline decision. See [`.kiro/specs/wells-fargo-rag-chatbot/`](.kiro/specs/wells-fargo-rag-chatbot/)
 for the requirements/design/task spec, [`EVALUATION_REPORT.md`](EVALUATION_REPORT.md) for
